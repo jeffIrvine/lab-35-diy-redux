@@ -6,15 +6,15 @@ import { Blog } from './Blog';
 const BlogList = () => {
   const blogs = useSelector(getBlogs);
 
-  const BlogInstance = blogs.map(blog => (
+  const blogInstance = blogs.map((blog, index) => (
     <li key={blog.title}>
-      <Blog {...blog} />
+      <Blog index={index} {...blog} />
     </li>
   ));
 
   return (
     <ul>
-      {BlogInstance}
+      {blogInstance}
     </ul>
   );
 };
