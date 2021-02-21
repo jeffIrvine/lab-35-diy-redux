@@ -1,4 +1,4 @@
-import { deleteBlog, createBlog } from '../actions/postActions';
+import { deleteBlog } from '../actions/postActions';
 import reducer from './postReducer';
 
 describe('blog reducer', () => {

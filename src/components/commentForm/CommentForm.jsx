@@ -1,35 +1,36 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { createBlog } from '../../actions/postActions';
+import { createComment } from '../../actions/commentActions';
 import { useDispatch } from 'react-redux';
 
 
-const BlogForm = () => {
+const CommentForm = ({ index }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(createBlog({ title, body }));
+    dispatch(createComment({ title, body, index }));
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input 
         type="text"
-        placeholder="Type your title"
+        placeholder="Type your comment title"
         value={title}
         onChange={({ target }) => setTitle(target.value)}
       />
       <input 
         type="text"
-        placeholder="Text body"
+        placeholder="Comment body"
         value={body}
         onChange={({ target }) => setBody(target.value)}
       />
-      <button>Create a Blog</button>
+      <button>Create a Comment</button>
     </form>
   );
 };
     
-export default BlogForm;
+export default CommentForm;
