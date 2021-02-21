@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { createComment } from '../../actions/postActions';
+import { createComment } from '../../actions/commentActions';
 import { useDispatch } from 'react-redux';
 
 
